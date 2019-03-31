@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ActivityCategoryPreferencePageAdvancedDialogSettings">
+		<item value="344" key="DIALOG_WIDTH"/>
+		<item value="-17" key="DIALOG_Y_ORIGIN"/>
+		<item value="505" key="DIALOG_HEIGHT"/>
+		<item value="187" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="WorkbenchPreferenceDialogSettings">
+		<item value="85" key="DIALOG_Y_ORIGIN"/>
+		<item value="610" key="DIALOG_X_ORIGIN"/>
+	</section>
+</section>

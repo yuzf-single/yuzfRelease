@@ -1,0 +1,45 @@
+package cartoon;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import cartoon.bean.CartoonBean;
+import cartoon.util.JdbcUtil;
+
+public class CartoonAction {
+	public CartoonBean cartoon = new CartoonBean();
+	
+	/**
+	 * 漫画下载
+	 * @author yuzf
+	 * @return
+	 */
+	public CartoonBean downloadCartoon() {
+		JdbcUtil connection = new JdbcUtil();
+		List<Object> params = new ArrayList<Object>();
+		connection.getConnection();
+		String sql = "select downloadUrl from tf_b_cartoon where serialNumber = ?";
+		params.add(cartoon.getSerialNumber());
+		try {
+			List<CartoonBean> list = connection.findMoreRefResult(sql, params , CartoonBean.class);
+			cartoon.setDownloadUrl(list.get(0).getDownloadUrl());
+			cartoon.setRspCode("0000");
+			cartoon.setRspDesc("查询成功");
+		} catch (Exception e) {
+			e.printStackTrace();
+			cartoon.setRspCode("9999");
+			cartoon.setRspDesc("查询失败");
+		} 
+		return cartoon;
+	}
+	
+	
+	public CartoonBean getCartoon() {
+		return cartoon;
+	}
+
+	public void setCartoon(CartoonBean cartoon) {
+		this.cartoon = cartoon;
+	}
+
+}

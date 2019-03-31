@@ -1,0 +1,37 @@
+package cartoon;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import cartoon.bean.CartoonBean;
+import cartoon.util.JdbcUtil;
+
+public class CartoonAction {
+	public CartoonBean cartoon = new CartoonBean();
+	
+
+
+	public void downloadCartoon() {
+		JdbcUtil connection = new JdbcUtil();
+		List<Object> params = new ArrayList<Object>();
+		connection.getConnection();
+		String sql = "select downloadUrl from tf_b_cartoon where serialNumber = ?";
+		params.add(cartoon.getSerialNumber());
+		try {
+			List<CartoonBean> list = connection.findMoreRefResult(sql, null , CartoonBean.class);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}  
+	}
+	
+	
+	public CartoonBean getCartoon() {
+		return cartoon;
+	}
+
+	public void setCartoon(CartoonBean cartoon) {
+		this.cartoon = cartoon;
+	}
+
+}

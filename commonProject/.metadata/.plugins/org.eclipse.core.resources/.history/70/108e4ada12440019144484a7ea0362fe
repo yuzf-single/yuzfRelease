@@ -1,0 +1,5 @@
+package cartoon.util;
+
+public class JdbcUtil {
+
+}

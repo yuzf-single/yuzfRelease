@@ -1,0 +1,39 @@
+package cartoon.bean;
+
+import java.io.Serializable;
+
+public class CartoonBean implements Serializable{
+
+	private static final long serialVersionUID = -7740765187220751333L;
+	
+	private String cartoonName;//Âþ»­Ãû
+	
+	private String serialNumber;//Âþ»­±àºÅ
+	
+	private String readChaper;//ÔÄ¶ÁÕÂ½Ú
+
+	public String getCartoonName() {
+		return cartoonName;
+	}
+
+	public void setCartoonName(String cartoonName) {
+		this.cartoonName = cartoonName;
+	}
+
+	public String getSerialNumber() {
+		return serialNumber;
+	}
+
+	public void setSerialNumber(String serialNumber) {
+		this.serialNumber = serialNumber;
+	}
+
+	public String getReadChaper() {
+		return readChaper;
+	}
+
+	public void setReadChaper(String readChaper) {
+		this.readChaper = readChaper;
+	}
+
+}

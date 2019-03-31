@@ -1,0 +1,48 @@
+package cartoon.util;
+
+import java.sql.DriverManager;
+import java.util.Map;
+
+import com.mysql.jdbc.Connection;
+
+public class JdbcUtil {
+	private static final String drive = "com.mysql.jdbc.Driver";
+	private static final String url = "";
+	private static final String userName = "";
+	private static final String password = "";
+	// 定义访问数据库的连接  
+    private Connection connection;  
+	
+	public JdbcUtil() {  
+        // TODO Auto-generated constructor stub  
+        try {  
+            Class.forName(drive);  
+            System.out.println("注册驱动成功！！");  
+        } catch (ClassNotFoundException e) {  
+            // TODO Auto-generated catch block  
+            System.out.println("注册驱动失败！！");  
+        }  
+  
+    }  
+	
+	// 定义获得数据库的连接  
+    public Connection getConnection() {  
+  
+        try {  
+            connection = DriverManager.getConnection(url, userName, password);  
+  
+        } catch (Exception e) {  
+            // TODO: handle exception  
+            System.out.println("Connection exception !");  
+        }  
+  
+        return connection;  
+  
+    }  
+	
+	public Map query(String sql) throws Exception {
+		Class.forName(drive);
+		Connection connection = (Connection) DriverManager.getConnection(url, userName, password);
+	}
+
+}

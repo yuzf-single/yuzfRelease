@@ -1,0 +1,7 @@
+package cartoon.bean;
+
+import java.io.Serializable;
+
+public class CartoonBean implements Serializable{
+
+}
